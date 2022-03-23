@@ -17,7 +17,7 @@ function playRound() {
                 return ("you lose! Paper beats rock")
                 break
             case "scissors":
-                return ("you win! Rock beats paper")
+                return ("you win! Rock beats scissors")
                 break
         }
     } else if (playerSelection == "paper") {
