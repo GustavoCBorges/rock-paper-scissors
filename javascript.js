@@ -12,13 +12,7 @@ score.textContent = `${playerScore} X ${computerScore}`;
 const buttons = document.querySelectorAll('.button');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
-        if (playerScore == 5 || computerScore == 5) {
-            choose.style.display = 'none';
-            result.style.display = 'none';
-            (playerScore > computerScore) ? gameOver.textContent = 'You won!' : gameOver.textContent = 'You lost...';
-        } else {            
             playRound(e.target.id, computerPlay());
-        };
     });
 });
 
@@ -77,5 +71,14 @@ function playRound(playerSelection,computerSelection) {
             case "scissors":
                 result.textContent = "it's a draw!";
         }
+    }
+    checkScore()
+}
+
+function checkScore() {
+    if (playerScore == 5 || computerScore == 5) {
+        choose.style.display = 'none';
+        result.style.display = 'none';
+        (playerScore > computerScore) ? gameOver.textContent = 'You won!' : gameOver.textContent = 'You lost...'
     }
 }
