@@ -30,14 +30,16 @@ body {
 .button:hover {
     transition: color 0.01s, border 0.01s, background-color 0.01s;
     color: white;
-    border: 2px solid rgb(255, 223, 41);
-    background-color: rgb(255, 223, 41);
+    border: 2px solid gold;
+    background-color: gold;
 }
 
 .button:active{
     transition: width 0.01s, height 0.01s;
-    width: 98px;
-    height: 98px;
+    border: 2px solid rgb(236, 201, 0);
+    background-color: rgb(236, 201, 0);
+    width: 100px;
+    height: 100px;
 }
 
 #replay {
