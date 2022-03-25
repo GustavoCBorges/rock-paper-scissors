@@ -25,6 +25,10 @@ body {
     border: 2px solid gold;
 }
 
+.invisible {
+    display: none;
+}
+
 h1 {
     margin: 15vh 0em 0em 0em;
 }
