@@ -3,6 +3,9 @@ const result = document.querySelector('#result');
 const score = document.querySelector('#score');
 const gameOver = document.querySelector('#gameOver');
 const replay = document.querySelector('#replay');
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -12,8 +15,10 @@ score.textContent = `${playerScore} X ${computerScore}`;
 const buttons = document.querySelectorAll('.button');
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
-        if (playerScore != 5 && computerScore != 5){
+        if (playerScore != 5 && computerScore != 5) {
             playRound(e.target.id, computerPlay());
+        } else {
+            playAgain();
         }
     });
 });
@@ -79,8 +84,28 @@ function playRound(playerSelection,computerSelection) {
 
 function checkScore() {
     if (playerScore == 5 || computerScore == 5) {
-        choose.style.display = 'none';
-        result.style.display = 'none';
+        choose.classList.toggle('invisible');
+        result.classList.toggle('invisible');
+        replay.classList.toggle('invisible');
+        rock.classList.toggle('invisible');
+        paper.classList.toggle('invisible');
+        scissors.classList.toggle('invisible');
         (playerScore > computerScore) ? gameOver.textContent = 'You won!' : gameOver.textContent = 'You lost...';
     }
+}
+
+function playAgain() {
+    playerScore = 0;
+    computerScore = 0;
+    choose.textContent = '';
+    result.textContent = '';
+    score.textContent = `${playerScore} X ${computerScore}`;
+    gameOver.textContent = '';
+
+    choose.classList.toggle('invisible');
+    result.classList.toggle('invisible');
+    replay.classList.toggle('invisible');
+    rock.classList.toggle('invisible');
+    paper.classList.toggle('invisible');
+    scissors.classList.toggle('invisible');
 }
